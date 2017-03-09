@@ -45,3 +45,10 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+platforms/
+.vscode/
+www/.vscode/
+www/typings/
+www/npm/
+npm/
