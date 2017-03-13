@@ -11,7 +11,7 @@ var engine = {
     },
     //step executes a single command
     step: function () {
-        
+
         if (engine.commands[engine.next] === undefined) {
             engine.next = false;
             return;
@@ -60,7 +60,7 @@ var engine = {
 
 
         }
-       // cmBox.goTo(engine.next);
+        // cmBox.goTo(engine.next);
         if (engine.next - 1 != false) {
             $('#backButton').attr("disabled", true);
             $('#strip').css('pointer-events', 'none');
@@ -81,22 +81,26 @@ var engine = {
         var count = 0;
         engine.next = 0;
         while (true) {
-            if (strip.currentNum < 20 || strip.currentNum > 480) {
-                alert(langData.postDebug.loopError)
-                engine.null();
-                return;
-            }
-            if (engine.next === false) {
-                engine.null();
-                return;
-            };
             count++;
-            if (engine.step() === true) {
-                if (!engine.isTesting) {
-                    alert(langData.postDebug.noErrors);
+            if ((strip.currentNum < 20 || strip.currentNum > (strip.cbCount - 20)) || count > strip.cbCount) {
+                if (count > 1000) {
+                    alert(langData.postDebug.loopError)
+                    engine.null();
+                    strip.centerBox(strip.cbCount / 2);
+                    return;
                 }
-                engine.null();
-                return;
+                if (engine.next === false) {
+                    engine.null();
+                    return;
+                };
+
+                if (engine.step() === true) {
+                    if (!engine.isTesting) {
+                        alert(langData.postDebug.noErrors);
+                    }
+                    engine.null();
+                    return;
+                }
             }
         }
     },

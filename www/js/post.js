@@ -15,9 +15,11 @@ var post = {
         post.currentTask = false;
         post.currentSaveNum = false;
         post.screenId = 'post';
+
         return $.get('template/post.html', function (templ) {
             templ = Mustache.render(templ, langData['post']);
             viewManager.addAsyncScreen(post.screenId, templ, false);
+
         }).then(function () {
             $.get('template/postCommands.html', function (templ) {
                 post.commandTemplate = Mustache.render(templ, langData['postCommands']);
@@ -64,6 +66,7 @@ function initEvents() {
     });
     $(document).on('click', '.navPost', function () {
         viewManager.showAsyncScreen('post');
+        strip.centerBox();
     });
     $(document).on('click', '.navInstr', function () {
         viewManager.showAsyncScreen('instr');
