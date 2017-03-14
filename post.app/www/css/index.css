@@ -1,0 +1,479 @@
+body {
+    filter: none;
+    position: fixed;
+    /*overflow: hidden;*/
+    -webkit-touch-callout: none;
+    /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;
+    /* prevent webkit from resizing text to fit */
+    background-color: #252338;
+    -webkit-user-select: none;
+    /* prevent copy paste, to allow, change 'none' to 'text' */
+    /*
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    background-attachment:fixed;*/
+    /*font-size:12px;*/
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    color: white;
+}
+
+#loadingScreen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 5;
+    background-image: url("../img/loader.gif");
+    background-size: cover;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#post {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#home {
+    z-index: 4;
+    background-color: #252338;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#strip {
+    padding: 0;
+    /*display: inline;*/
+    overflow: hidden;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+#head {
+    position: absolute;
+    font-size: 20px;
+    /*color:#00FF00;*/
+    color: #1de9b6;
+}
+
+.padding {
+    padding: 0;
+}
+
+.margin {
+    margin: 0;
+}
+
+.border {
+    border: 1px solid black;
+}
+
+.cb {
+    float: left;
+    margin: 0;
+}
+
+#commandList {
+    overflow: hidden;
+    width: 100%;
+    height: 3000px;
+    position: absolute;
+    background-color: white;
+    display: block;
+}
+
+.listItem {
+    color: black;
+    text-align: center;
+    padding-bottom: 1px;
+    border-radius: 6px;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+}
+
+#commandButtonContainer {
+    /*top:35px;*/
+    position: relative;
+}
+
+.ifArgs {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#commandForm * {
+    border: 3px solid #C2FF99
+}
+
+#commandListFrame {
+    border-radius: 7px;
+    border-top-left-radius: 0px;
+    background-color: white;
+    display: block;
+    overflow: hidden;
+    /*height: 100%;*/
+}
+
+#listSelector {
+    background-color: rgba(0, 170, 255, 0.4);
+    position: fixed;
+    z-index: 5;
+    /*border-radius: 0px;*/
+}
+
+#li0 {
+    border: none;
+}
+
+#saves {
+    display: block;
+    overflow: scroll;
+}
+
+.save {
+    color: lightgrey;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid lightgray;
+}
+
+.save>div {
+    margin-top: 15px;
+}
+
+.save>button {
+    float: right
+}
+
+#saves>.homeButton {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#saveModal div {
+    color: black;
+}
+
+#saveButton {
+    /*padding-right: 3px;*/
+}
+
+#modl {
+    top: 100px;
+}
+
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.row.no-gutters>[class^="col-"],
+.row.no-gutters>[class*=" col-"] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#debugInterval {
+    width: 30px;
+}
+
+#tasks {
+    overflow: scroll;
+}
+
+.taskBig {
+    height: 200px;
+    display: none;
+    color: lightgrey;
+    border-bottom: 1px solid lightgray;
+}
+
+.taskSmall {
+    display: inline-block;
+    border-bottom: 1px solid lightgray;
+    vertical-align: middle;
+    color: lightgrey;
+}
+
+.taskBig {
+    /*background-color: #252338;*/
+    background-color: grey;
+}
+
+.taskSmall p {
+    margin-top: 10px;
+}
+
+.taskSmall button {
+    vertical-align: middle;
+    float: right;
+}
+
+.taskBig button {
+    vertical-align: middle;
+    float: right;
+}
+
+.taskLoadButton {
+    z-index: 100;
+}
+
+#homeLogo {
+    right: 0;
+    top: 40%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 3;
+}
+
+#banner {
+    position: absolute;
+    width: 50%;
+    height: auto;
+    left: 25%;
+    margin-top: 5px;
+    top: 5px;
+}
+
+.carousel-indicators {
+    opacity: 0.2;
+}
+
+#navPost {
+    top: 20px;
+    padding: 0;
+    padding-left: 15px;
+    display: inline;
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+}
+
+.additionalTask {
+    display: none;
+}
+
+#taskPreviewModal .modal-content {
+    background-color: gray;
+}
+
+#taskPreviewModal button {
+    right: 0;
+}
+
+#sl1 {
+    height: 320px;
+}
+
+#sl1>div {
+    margin-top: 50px;
+}
+
+#sl1 img {
+    width: 100px;
+    height: auto;
+    vertical-align: middle;
+}
+
+#sl1 p {
+    margin-top: 6px;
+}
+
+#sl2>div {
+    margin-top: 50px;
+}
+
+#sl2 p {
+    margin-top: 10px;
+}
+
+#sl4>p {
+    margin-top: 20px;
+}
+
+#sl5>img {
+    width: 100%;
+    height: 100%;
+}
+
+.picInstruction>img {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.square {
+    margin-top: 10px;
+}
+
+#debugIgnore {
+    width: 20px;
+    height: 20px;
+}
+
+#debugContainer>span {
+    margin-bottom: 10px;
+}
+
+#navPost>button {
+    margin-top: 10px;
+    vertical-align: middle;
+    width: 100%;
+    float: right;
+    right: 0;
+    border: 3px solid #C2FF99;
+    padding-left: 7px;
+}
+
+#homeContainer {
+    margin-top: 30px;
+}
+
+#homeContainer>button {
+    margin-top: 50px;
+    width: 20%;
+    margin-left: 20%;
+    border: 3px solid #C2FF99
+}
+
+#debugContainer button {
+    margin-top: 10px;
+    color: #fff;
+    background-color: #252338;
+    border: 3px solid #C2FF99
+}
+
+#commandButtonContainer>button {
+    height: 46px;
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    /*background-color: #00E5FF;*/
+    /*background-color:#252338;*/
+    /*border-color: greenyellow;*/
+    background-color: #252338;
+    border: 3px solid #C2FF99
+}
+
+#ifTrue {
+    border-left: 0px solid #C2FF99;
+    border-right: 0px solid #C2FF99;
+}
+
+#commandButtonContainer>button:nth-child(4) {
+    padding-left: 7px;      
+}
+
+#saveModal>div {
+    top: 30px;
+}
+
+.onoffswitch {
+    position: relative;
+    width: 95px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    margin-top: 10%;
+    left: 42%;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #CCCCCC;
+    border-radius: 36px;
+}
+
+.onoffswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before,
+.onoffswitch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 36px;
+    padding: 0;
+    line-height: 36px;
+    font-size: 16px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+    content: "en";
+    padding-left: 10px;
+    background-color: #007AFF;
+    color: #FFFFFF;
+}
+
+.onoffswitch-inner:after {
+    content: "bg";
+    padding-right: 10px;
+    background-color: #49E845;
+    color: #666666;
+    text-align: right;
+}
+
+.onoffswitch-switch {
+    display: block;
+    width: 36px;
+    margin: 0px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 55px;
+    border: 2px solid #CCCCCC;
+    border-radius: 36px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+}
