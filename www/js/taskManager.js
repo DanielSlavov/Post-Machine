@@ -8,18 +8,23 @@ var taskManager = {
                 console.log(task);
                 $('#tasks').append("<div id=" + task + " class='taskContainer' ></div>");
                 $('#' + task).html(Mustache.render(taskManager.taskTemplate, taskData[lang][task]));
-                $('.taskSmall button').text(langData['post'].load);
-                $('.taskBig button').text(langData['post'].load);
-
-
+                $('.taskSmall .taskLoad').text(langData['tasks'].load);
+                $('.taskBig .taskLoad').text(langData['tasks'].load);
+                $('.taskBig .taskLoadSolution').text(langData['tasks'].loadSolution);
             }
         });
         $.get('template/taskPreview.html', function (templ) {
             taskManager.taskPreview = templ;
         })
-
-        $(document).on('click', '.taskLoadButton', function () {
-            post.setTask($(this).parent().parent().attr('id'));
+        $(document).on('click', '.taskLoad', function () {
+            var task = $(this).closest('.taskContainer').attr('id');
+            post.setTask(task);
+            viewManager.showAsyncScreen('post');
+        })
+        $(document).on('click', '.taskLoadSolution', function () {
+            var task = $(this).closest('.taskContainer').attr('id');
+            cmBox.loadFromSave(taskData["solution"][task].solution);
+            post.setTask(task);
             viewManager.showAsyncScreen('post');
         })
         $(document).on('click', '.taskContainer', taskManager.switchTask)

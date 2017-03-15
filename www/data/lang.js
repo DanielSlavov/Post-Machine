@@ -16,8 +16,12 @@ var en = {
         saveDone: "done",
         testSuccess: "you have successfully completed the task",
         testFailed: "task failed",
-        load: "Load",
+        
         nameTaken: "name already exists"
+    },
+    tasks:{
+        load: "Load",
+        loadSolution:"Solution"
     },
     postCommands: {
         insert: "Insert",
@@ -70,8 +74,11 @@ var bg = {
         saveDone: "готово",
         testSuccess: "Успешно решихте задачата.",
         testFailed: "Задачата не е решена.",
-        load: "Зареди",
         nameTaken: "Името е заето."
+    },
+     tasks:{
+        load: "Зареди",
+        loadSolution:"Решение"
     },
     postCommands: {
         insert: "добавяне",

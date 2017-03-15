@@ -1,10 +1,15 @@
 <div class="taskSmall col-xs-12">
     <h2>{{name}}</h2>
-    <button class='taskLoadButton btn btn-default btn-sm col-xs-offset-11'></button>
+    <button class='taskLoad btn btn-default btn-sm col-xs-offset-11'></button>
 </div>
 <div class="taskBig col-xs-12">
     <h3>{{name}}</h3>
-    <button class='taskLoadButton btn btn-default btn-sm col-xs-offset-11'></button>
-    <p class="row col col-xs-offset-1 col-xs-8">{{description}}</p>
+    <p class="row col col-xs-7 col-xs-offset-1">{{description}}</p>
+    <div class="col-xs-3 col-xs-offset-1">
+        <button class='taskLoad btn btn-default col-xs-12 '></button>
+        <button class='taskLoadSolution btn btn-default col-xs-12 '></button>
+    </div>
+    
+
     <!--<button>{{loadSolution}}</button>-->
 </div>

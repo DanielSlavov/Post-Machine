@@ -240,8 +240,9 @@ body {
     float: right;
 }
 
-.taskLoadButton {
+.taskLoad {
     z-index: 100;
+    margin-bottom: 30px;
 }
 
 #homeLogo {
@@ -390,7 +391,7 @@ body {
 }
 
 #commandButtonContainer>button:nth-child(4) {
-    padding-left: 7px;      
+    padding-left: 7px;
 }
 
 #saveModal>div {
