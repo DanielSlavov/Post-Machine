@@ -9,7 +9,6 @@ var cmBox = {
         $('#listSelector').css('height', $('.listItem').outerHeight() + 2);
         $('#listSelector').css('top', ((cmBox.lineCount / 2) * $('#listSelector').height()));
         $('#listSelector').css('width', $('.listItem').width());
-
     },
     initFunctionality: function () {
         //centers the blue selector on an exact commands
@@ -38,6 +37,9 @@ var cmBox = {
         cmBox.loadFromSave = function (newCommands) { //loads command list from a save
             cmBox._commands = newCommands;
             cmBox.refreshCommands();
+            setTimeout(function () {
+                cmBox.centerSelector();
+            }, 00);
         }
         //centers a the selector on a certain command 'id'
         cmBox.goTo = function (id) { //for debugger
@@ -53,9 +55,7 @@ var cmBox = {
         }
         //adds the commands to the DOM from the array cmBox._commands
         cmBox.refreshCommands = function () {
-            for (var i = 1; i <= cmBox._commands.length + 1; i++) {
-                $('#li' + i).remove();
-            }
+            $('.listItem').not('#li0').remove();
             for (var i = 1; i <= cmBox._commands.length; i++) {
                 $('#commandList').append("<div id='li" + i + "'class='listItem'>" + i + "&nbsp;" + cmBox._commands[i - 1] + "</div>");
             }
@@ -108,12 +108,8 @@ var cmBox = {
 
         }
         cmBox.clearAll = function () {
-
-            for (var i = 1; i <= cmBox._commands.length + 1; i++) {
-                $('#li' + i).remove();
-            }
             cmBox._commands = [];
-            engine.commands = cmBox.getCommands();
+            cmBox.refreshCommands();
         }
         cmBox.deleteCommand = function () {
             cmBox.centerSelector();
