@@ -27,7 +27,7 @@ var engine = {
                 break;
             case 'P':
                 if (strip.check() && !$("#debugIgnore").is(":checked")) {
-                    alert(langData.postDebug.pError + (engine.next + 1));
+                    navigator.notification.alert(langData.postDebug.pError + (engine.next + 1), function () {}, "");
                     engine.next = false;
                     return;
                 }
@@ -35,7 +35,8 @@ var engine = {
                 break;
             case 'D':
                 if (!strip.check() && !$("#debugIgnore").is(":checked")) {
-                    alert(langData.postDebug.dError + (engine.next + 1));
+                    //alert(langData.postDebug.dError + (engine.next + 1));
+                    navigator.notification.alert(langData.postDebug.dError + (engine.next + 1), function () {}, "");
                     engine.next = false;
                     return;
                 }
@@ -46,7 +47,8 @@ var engine = {
             default:
 
                 if (command[1] == "X" || command[2] == "X") {
-                    alert(langData.postDebug.editX + (engine.next + 1));
+                    //alert(langData.postDebug.editX + (engine.next + 1));
+                    navigator.notification.alert(langData.postDebug.editX + (engine.next + 1), function () {}, "");
                     engine.next = false;
                     return;
                 } else {
@@ -84,7 +86,8 @@ var engine = {
             count++;
             if ((strip.currentNum < 20 || strip.currentNum > (strip.cbCount - 20)) || count > strip.cbCount) {
                 if (count > 1000) {
-                    alert(langData.postDebug.loopError)
+                   // alert(langData.postDebug.loopError)
+                    navigator.notification.alert(langData.postDebug.loopError, function () {}, "");
                     engine.null();
                     strip.centerBox(strip.cbCount / 2);
                     return;
@@ -93,10 +96,10 @@ var engine = {
                     engine.null();
                     return;
                 };
-
                 if (engine.step() === true) {
                     if (!engine.isTesting) {
-                        alert(langData.postDebug.noErrors);
+                       // alert(langData.postDebug.noErrors);
+                        navigator.notification.alert(langData.postDebug.noErrors, function () {}, "");
                     }
                     engine.null();
                     return;

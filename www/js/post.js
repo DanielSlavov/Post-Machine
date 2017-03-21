@@ -103,7 +103,8 @@ function initEvents() {
             return;
         }
         if (saveManager.createSave($("#modalInput").val(), cmBox.getCommands(), post.currentTask) == false) {
-            alert(langData['post'].nameTaken);
+            // alert(langData['post'].nameTaken);
+            navigator.notification.alert(langData['post'].nameTaken, function () {}, "");
         }
         //$("#saveButton").removeClass('btn-default').addClass('btn-success');
         $("#saveModal").modal("hide");
@@ -170,7 +171,8 @@ function backButtonSimulation() {
 //checs if the current task is solved
 function test() {
     if (post.currentTask == false) {
-        alert('no task selected');
+        //  alert('no task selected');
+        navigator.notification.alert(langData['post'].noTaskSelected, function () {}, "");
         return;
     }
     var testInput = taskData["solution"][post.currentTask].testInput;
@@ -185,12 +187,14 @@ function test() {
     for (var i = 0; i < testFinal.length; i++) {
         if (testFinal[i] != current[i]) {
             strip.reset();
-            alert(langData['post'].testFailed);
+            // alert(langData['post'].testFailed);
+            navigator.notification.alert(langData['post'].testFailed, function () {}, "");
             return false;
         }
     }
     strip.reset();
-    alert(langData['post'].testSuccess);
+    //alert(langData['post'].testSuccess);
+    navigator.notification.alert(langData['post'].testSuccess, function () {}, "");
 }
 
 function square() {

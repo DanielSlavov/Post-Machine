@@ -17,7 +17,8 @@ var en = {
         testSuccess: "you have successfully completed the task",
         testFailed: "task failed",
         nameTaken: "name already exists",
-        load: "Load"
+        load: "Load",
+        noTaskSelected:"No task selected"
     },
     tasks: {
         load: "Try it",
@@ -28,7 +29,8 @@ var en = {
         delete: "Delete",
         edit: "Edit",
         debug: "Debug",
-        deleteAll: "Delete all commands ?"
+        deleteAll: "Delete all commands ?",
+        okCancel: ["ok", "cancel"]
     },
     postDebug: {
         start: "Start",
@@ -75,7 +77,8 @@ var bg = {
         testSuccess: "Успешно решихте задачата.",
         testFailed: "Задачата не е решена.",
         nameTaken: "Името е заето.",
-        load: "Зареди"
+        load: "Зареди",
+        noTaskSelected:"Не е избрана задача"
     },
     tasks: {
         load: "Опитай",
@@ -86,7 +89,8 @@ var bg = {
         delete: "изтриване",
         edit: "промяна",
         debug: "изпълнение",
-        deleteAll: "Изтриване на всички команди ?"
+        deleteAll: "Изтриване на всички команди ?",
+        okCancel: ["ok", "отказ"]
     },
     postDebug: {
         start: "старт",

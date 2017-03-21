@@ -50,10 +50,10 @@ var cmTools = {
         })
         $('#del').on('mousedown', function (e) {
             interval = setInterval(function () {
-                if (confirm(langData['postCommands'].deleteAll)) {
+                navigator.notification.confirm(langData['postCommands'].deleteAll, function () {
                     cmBox.clearAll();
                     strip.reset();
-                }
+                }, "", langData['postCommands'].okCancel)
                 clearInterval(interval);
             }, 800);
         });
