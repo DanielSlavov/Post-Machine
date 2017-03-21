@@ -127,14 +127,21 @@ function initEvents() {
         $("#saveModal").modal("hide");
     })
     $(document).on('click', '.save>button', function () { //loadButton 
-        var number = $(this).parent().data('savenum');
-        console.log(number);
+        var num = $(this).parent().data('savenum');
         saveManager.getSaves();
-        cmBox.loadFromSave(saveManager.saves.reverse()[number].data);
-        post.setTask(saveManager.saves[number].task);
-        post.currentSaveNum = number;
+        cmBox.loadFromSave(saveManager.saves[num].data);
+        post.setTask(saveManager.saves[num].task);
+        post.currentSaveNum = num;
         viewManager.showAsyncScreen('post');
         cmBox.centerSelector();
+    })
+    $(document).on('click', '.save>span', function () {
+        var num = $(this).parent().data('savenum');
+        navigator.notification.confirm(langData["post"].deleteSave + saveManager.getSaveName(num) + ' ?', function (index) {
+            if (index !== 1) return;
+            saveManager.deleteSave(num);
+        }, "", langData['post'].okCancel)
+
     })
     //currentTaskButton
     $(document).on('touchstart', '#currentTaskButton', function () {

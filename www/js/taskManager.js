@@ -22,15 +22,21 @@ var taskManager = {
             viewManager.showAsyncScreen('post');
         })
         $(document).on('click', '.taskLoadSolution', function () {
-            var task = $(this).closest('.taskContainer').attr('id');
-            cmBox.loadFromSave(taskData["solution"][task].solution);
-            post.setTask(task);
-            viewManager.showAsyncScreen('post');
+            _this = this;
+            navigator.notification.confirm(langData["post"].loadSolutionPromt, function (index) {
+                if (index !== 1) return;
+                var task = $(_this).closest('.taskContainer').attr('id');
+                cmBox.loadFromSave(taskData["solution"][task].solution);
+                post.setTask(task);
+                viewManager.showAsyncScreen('post');
+            }, "", langData['post'].okCancel)
+
         })
         $(document).on('click', '.taskContainer', taskManager.switchTask)
         console.log('taskManager initialized')
     },
-    switchTask: function () {
+    switchTask: function (e) {
+        if (e.target.tagName == "BUTTON") return;
         if (taskManager.currentBig === $(this).attr('id').toString()) {
             $(this).children().eq(0).show();
             $(this).children().eq(1).hide();

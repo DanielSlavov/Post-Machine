@@ -18,7 +18,10 @@ var en = {
         testFailed: "task failed",
         nameTaken: "name already exists",
         load: "Load",
-        noTaskSelected:"No task selected"
+        noTaskSelected:"No task selected",
+        deleteSave:"Delete save ",
+        okCancel: ["ok", "cancel"],
+        loadSolutionPromt:"Are you sure ?"
     },
     tasks: {
         load: "Try it",
@@ -29,8 +32,7 @@ var en = {
         delete: "Delete",
         edit: "Edit",
         debug: "Debug",
-        deleteAll: "Delete all commands ?",
-        okCancel: ["ok", "cancel"]
+        deleteAll: "Delete all commands ?"
     },
     postDebug: {
         start: "Start",
@@ -78,7 +80,10 @@ var bg = {
         testFailed: "Задачата не е решена.",
         nameTaken: "Името е заето.",
         load: "Зареди",
-        noTaskSelected:"Не е избрана задача"
+        noTaskSelected:"Не е избрана задача",
+        deleteSave:"Изтриване на ",
+        okCancel: ["ok", "отказ"],
+        loadSolutionPromt:"Сигурне ли сте ?"
     },
     tasks: {
         load: "Опитай",
@@ -89,8 +94,7 @@ var bg = {
         delete: "изтриване",
         edit: "промяна",
         debug: "изпълнение",
-        deleteAll: "Изтриване на всички команди ?",
-        okCancel: ["ok", "отказ"]
+        deleteAll: "Изтриване на всички команди ?"
     },
     postDebug: {
         start: "старт",

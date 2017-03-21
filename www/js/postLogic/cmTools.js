@@ -53,7 +53,7 @@ var cmTools = {
                 navigator.notification.confirm(langData['postCommands'].deleteAll, function () {
                     cmBox.clearAll();
                     strip.reset();
-                }, "", langData['postCommands'].okCancel)
+                }, "", langData['post'].okCancel)
                 clearInterval(interval);
             }, 800);
         });

@@ -4,6 +4,14 @@ var saveManager = {
         saveManager.getSaves();
         saveManager.domSaves();
     },
+    getSaveName:function(num){
+        return saveManager.saves[num].name;
+    },
+    deleteSave: function (num) {
+        saveManager.saves.splice(num, 1);
+        saveManager.domSaves();
+        saveManager.storeSaves();
+    },
     createSave: function (name, data, task) {
         console.log(name, task);
         for (var i = 0; i < saveManager.saves.length; i++) {
@@ -44,7 +52,7 @@ var saveManager = {
                 task = saveManager.saves[i].task;
             }
 
-            $('#saves').append('<div class="save" data-savenum=' + (saveManager.saves.length - i - 1) + '><div class="col-xs-4">' + date + '</div><div class="col-xs-4">' + name + '</div><button type="button" class="btn btn-default">' + langData['post'].load + '</button></div>');
+            $('#saves').append('<div class="save" data-savenum=' + i + '><div class="col-xs-4">' + date + '</div><div class="col-xs-4">' + name + '</div><button type="button" class="btn btn-default col-xs-offset-1">' + langData['post'].load + '</button><span class="glyphicon glyphicon-remove text-warning" aria-hidden="true"></span></div>');
         }
     },
     storeSaves: function () {

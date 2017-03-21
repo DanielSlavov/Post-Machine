@@ -157,7 +157,7 @@ body {
     color: lightgrey;
     left: 0;
     width: 100%;
-    height: 35px;
+    height: 50px;
     padding-bottom: 10px;
     border-bottom: 2px solid lightgray;
 }
@@ -167,7 +167,15 @@ body {
 }
 
 .save>button {
-    float: right
+    margin-top: 1.2%;
+}
+
+.save>span {
+    color: #C9302C;
+    font-size: 25px;
+    margin-right: 20px;
+    margin-top: 2.2%;
+    float: right;
 }
 
 #saves>.homeButton {
