@@ -137,6 +137,16 @@ body {
     /*height: 100%;*/
 }
 
+.commandSpan {
+    position: absolute;
+    right: 10px;
+}
+
+.lineSpan {
+    position: absolute;
+    left: 10px;
+}
+
 #listSelector {
     background-color: rgba(0, 170, 255, 0.4);
     position: fixed;

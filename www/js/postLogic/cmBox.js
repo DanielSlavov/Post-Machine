@@ -57,7 +57,8 @@ var cmBox = {
         cmBox.refreshCommands = function () {
             $('.listItem').not('#li0').remove();
             for (var i = 1; i <= cmBox._commands.length; i++) {
-                $('#commandList').append("<div id='li" + i + "'class='listItem'>" + i + "&nbsp;" + cmBox._commands[i - 1] + "</div>");
+                $('#commandList').append("<div id='li" + i + "' class='listItem'><span class='lineSpan'>" + i + "</span>" + cmBox._commands[i - 1] + " </div>");
+                //$('#commandList').append("<div id='li" + i + "'class='listItem'>" + i + "&nbsp;" + cmBox._commands[i - 1] + "</div>");
             }
             cmBox.centerSelector();
             engine.commands = cmBox.getCommands();
