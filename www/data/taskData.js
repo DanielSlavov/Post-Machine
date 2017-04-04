@@ -46,22 +46,22 @@ var taskData = {
     },
     solution: {
         "task1": {
-            "testInput": ["P", "L", "P", "L", "P", "L", "P", "L", "P", "L", "P", "L", "P", "L", "L", "P", "L", "P", "L", "P", "L", "P", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R"],
+            "testInput": ["P", "R", "P", "R", "P", "R", "P", "R", "P", "R", "P", "R", "P", "R", "R", "P", "R", "P", "R", "P", "R", "P", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L"],
             "testFinal": [true, true, true, true, true, true, true, true, true, true, true],
-            "solution":["P", "L", "P", "L", "P", "L"]
+            "solution":["P", "R", "P", "R", "P", "R"]
         },
         "task2": {
-            "testInput": ["P", "L", "P", "L", "P", "L", "P", "R", "R", "R"],
+            "testInput": ["P", "R", "P", "R", "P", "R", "P", "L", "L", "L"],
             "testFinal": [true, true, true, true, true, true, true, true],
             "solution":[]
         },
         "task3": {
-            "testInput": ["P", "L", "P", "L", "P", "L", "P", "R", "R", "R"],
+            "testInput": ["P", "R", "P", "R", "P", "R", "P", "L", "L", "L"],
             "testFinal": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
             "solution":[]
         },
         "task4": {
-            "testInput": ["P", "L", "P", "L", "P", "L", "P", "L", "P", "L", "P", "L", "P", "L", "L", "P", "L", "P", "L", "P", "R", "R", "R", "R", "R", "R", "R", "R", "R", "R"],
+            "testInput": ["P", "R", "P", "R", "P", "R", "P", "R", "P", "R", "P", "R", "P", "R", "R", "P", "R", "P", "R", "P", "L", "L", "L", "L", "L", "L", "L", "L", "L", "L"],
             "testFinal": [true, true, true, true],
             "solution":[]   
         }

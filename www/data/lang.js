@@ -18,10 +18,10 @@ var en = {
         testFailed: "task failed",
         nameTaken: "name already exists",
         load: "Load",
-        noTaskSelected:"No task selected",
-        deleteSave:"Delete save ",
+        noTaskSelected: "No task selected",
+        deleteSave: "Delete save ",
         okCancel: ["ok", "cancel"],
-        loadSolutionPromt:"Are you sure ?"
+        loadSolutionPromt: "Are you sure ?"
     },
     tasks: {
         load: "Try it",
@@ -47,8 +47,8 @@ var en = {
         editX: "must edit command ",
     },
     instructions: {
-        L: "L - Moves the strip left",
-        R: "R - Moves the strip right",
+        L: "L - Moves the marker left",
+        R: "R - Moves the marker right",
         D: "D - Clears the current cell",
         P: "P - Marks the current cell",
         S: "S - successful end of execution",
@@ -80,10 +80,10 @@ var bg = {
         testFailed: "Задачата не е решена.",
         nameTaken: "Името е заето.",
         load: "Зареди",
-        noTaskSelected:"Не е избрана задача",
-        deleteSave:"Изтриване на ",
+        noTaskSelected: "Не е избрана задача",
+        deleteSave: "Изтриване на ",
         okCancel: ["ok", "отказ"],
-        loadSolutionPromt:"Сигурне ли сте ?"
+        loadSolutionPromt: "Сигурне ли сте ?"
     },
     tasks: {
         load: "Опитай",
@@ -109,8 +109,8 @@ var bg = {
         editX: "Трабва се редактира команда "
     },
     instructions: {
-        L: "L - Изместване на лентата наляво веднъж.",
-        R: "R - Изместване на лентата надясно веднъж.",
+        L: "L - Измества маркера наляво веднъж.",
+        R: "R - Измества маркера надясно веднъж.",
         D: "D - Изтриване текущата клетка.",
         P: "P - Отбелязва текущата клетка.",
         S: "S - слага край на изпълнение, програмата е изпълнена успешно.",

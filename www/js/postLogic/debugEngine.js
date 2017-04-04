@@ -20,10 +20,10 @@ var engine = {
         var command = engine.commands[engine.next].split(' ');
         switch (command[0]) {
             case 'L':
-                strip.left();
+                strip.right();
                 break;
             case 'R':
-                strip.right();
+                strip.left();
                 break;
             case 'P':
                 if (strip.check() && !$("#debugIgnore").is(":checked")) {
